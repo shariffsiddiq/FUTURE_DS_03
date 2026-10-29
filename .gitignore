@@ -1,0 +1,7 @@
+# Customer-level event data and workbooks
+/data/raw/*.csv
+/data/cleaned/*.xlsx
+/excel/*.xlsx
+
+# Power BI files may embed customer-level data
+/powerbi/*.pbix

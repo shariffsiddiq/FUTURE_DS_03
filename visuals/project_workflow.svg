@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="370" viewBox="0 0 1200 370" role="img" aria-labelledby="title description">
+  <title id="title">Marketing funnel analysis project workflow</title>
+  <desc id="description">Raw e-commerce events are prepared as a cleaned sample, explored in Python, and presented in a Power BI dashboard with written reports and visual previews.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f9ff"/>
+      <stop offset="1" stop-color="#edf4ff"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f8fbff"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#16325c" flood-opacity=".10"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#7392c5"/>
+    </marker>
+    <style>
+      .title { font: 700 25px "Segoe UI", Arial, sans-serif; fill: #172b4d; }
+      .subtitle { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #586b88; }
+      .card-title { font: 700 18px "Segoe UI", Arial, sans-serif; fill: #203657; }
+      .body { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #52647e; }
+      .small { font: 600 12px "Segoe UI", Arial, sans-serif; fill: #46658f; letter-spacing: .5px; }
+    </style>
+  </defs>
+  <rect width="1200" height="370" rx="22" fill="url(#background)"/>
+  <text x="54" y="52" class="title">From event data to useful insights</text>
+  <text x="54" y="77" class="subtitle">A simple map of the files and analysis included in this project</text>
+
+  <g filter="url(#shadow)">
+    <rect x="48" y="119" width="246" height="174" rx="16" fill="url(#card)"/>
+    <rect x="342" y="119" width="246" height="174" rx="16" fill="url(#card)"/>
+    <rect x="636" y="119" width="246" height="174" rx="16" fill="url(#card)"/>
+    <rect x="930" y="119" width="222" height="174" rx="16" fill="url(#card)"/>
+  </g>
+
+  <path d="M302 205H328" stroke="#7392c5" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M596 205H622" stroke="#7392c5" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M890 205H916" stroke="#7392c5" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g transform="translate(72 145)">
+    <circle cx="19" cy="19" r="19" fill="#e1edff"/>
+    <path d="M10 15h18M10 21h18M10 27h12" stroke="#3478d4" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="0" y="66" class="small">01 · SOURCE</text>
+    <text x="0" y="93" class="card-title">Raw events</text>
+    <text x="0" y="119" class="body">October 2019 CSV</text>
+    <text x="0" y="142" class="body">Event-level store activity</text>
+  </g>
+
+  <g transform="translate(366 145)">
+    <circle cx="19" cy="19" r="19" fill="#e1f5ee"/>
+    <path d="M10 10h16v19H10zM14 15h8M14 20h8M14 25h5" fill="none" stroke="#18896a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <text x="0" y="66" class="small">02 · PREPARED DATA</text>
+    <text x="0" y="93" class="card-title">Cleaned sample</text>
+    <text x="0" y="119" class="body">9,999 records in Excel</text>
+    <text x="0" y="142" class="body">Quality and cleaning notes</text>
+  </g>
+
+  <g transform="translate(660 145)">
+    <circle cx="19" cy="19" r="19" fill="#fff0df"/>
+    <path d="M13 10h12v18H13zM16 15h6M16 19h6M16 23h4" fill="none" stroke="#db8129" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <text x="0" y="66" class="small">03 · ANALYSIS</text>
+    <text x="0" y="93" class="card-title">Python</text>
+    <text x="0" y="119" class="body">Funnel, trends, categories</text>
+    <text x="0" y="142" class="body">Report printed in terminal</text>
+  </g>
+
+  <g transform="translate(954 145)">
+    <circle cx="19" cy="19" r="19" fill="#f0e9ff"/>
+    <path d="M10 27V15l6 4v-5l7 5v-9h5v17z" fill="none" stroke="#7452bd" stroke-width="2" stroke-linejoin="round"/>
+    <text x="0" y="66" class="small">04 · PRESENTATION</text>
+    <text x="0" y="93" class="card-title">Power BI</text>
+    <text x="0" y="119" class="body">Interactive dashboard</text>
+    <text x="0" y="142" class="body">Previews and written reports</text>
+  </g>
+
+  <text x="54" y="337" class="subtitle">The analysis describes the cleaned sample; session event presence does not prove event order.</text>
+</svg>
