@@ -1,4 +1,4 @@
-# Future Interns — Marketing Funnel Analysis
+# Marketing Funnel Analysis
 
 This project looks at how people interact with products in an online store: what they view, add to their carts, and purchase. It includes a Python analysis, written findings, and Power BI dashboard previews.
 
