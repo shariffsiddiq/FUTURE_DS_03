@@ -2,7 +2,7 @@
 
 An end-to-end analysis of e-commerce customer activity, following the workflow **Excel → Python → Power BI**. The project explores product views, cart activity, purchases, and the limits of interpreting events grouped by session.
 
-> **A note about the data:** The raw CSV contains over a million rows, while the cleaned workbook contains a 9,999-record sample. Customer-level data and the Power BI file are intentionally not included in this repository because they contain, or may embed, user IDs and session identifiers. The analysis describes the sample only—not the full October 2019 dataset.
+> **A note about the data:** This repository includes a sanitized 9,999-record sample, not the full October 2019 dataset. The published copies omit `user_id` and `user_session`, and timestamps are reduced to the UTC calendar date. Original customer-level files and the Power BI file are not published.
 
 ## Project workflow
 
@@ -10,9 +10,11 @@ An end-to-end analysis of e-commerce customer activity, following the workflow *
 
 ### Phase 1 — Excel: data preparation and quality checks
 
-The local cleaned workbook contains a `Cleaned_Data` sheet and supporting `Data_Quality_Report` and `Cleaning_Summary` sheets. Raw and cleaned customer-level files are kept locally and are not published in this repository.
+Sanitized copies of the event sample and cleaned workbook are included below. They retain the `Cleaned_Data`, `Data_Quality_Report`, and `Cleaning_Summary` sheets, but omit customer and session identifiers and reduce timestamps to dates. The original, identifier-bearing files remain local and unchanged.
 
-- Cleaned workbook expected by the script: `data/cleaned/Task_3_Marketing_Funnel_Cleaned.xlsx`
+- Sanitized event sample: [`data/raw/2019-Oct-Sanitized-Sample.csv`](data/raw/2019-Oct-Sanitized-Sample.csv)
+- Sanitized cleaned workbook: [`data/cleaned/Task_3_Marketing_Funnel_Cleaned_Sanitized.xlsx`](data/cleaned/Task_3_Marketing_Funnel_Cleaned_Sanitized.xlsx) (also available in [`excel/`](excel/Task_3_Marketing_Funnel_Cleaned_Sanitized.xlsx))
+- Script input: `data/cleaned/Task_3_Marketing_Funnel_Cleaned.xlsx` (provide your own authorized, complete workbook locally; the sanitized public copy does not contain the identifier columns required for session analysis)
 - Required worksheet: `Cleaned_Data`
 - Required columns: `event_time`, `event_type`, `product_id`, `category_id`, `category_code`, `brand`, `price`, `user_id`, and `user_session`
 
@@ -23,7 +25,7 @@ The Python script standardizes event fields and summarizes event counts, session
 - Analysis script: [`python/marketing_funnel_analysis.py`](python/marketing_funnel_analysis.py)
 - Python analysis report: [`reports/Task_3_Phase_3_Python_Analysis_Report.pdf`](reports/Task_3_Phase_3_Python_Analysis_Report.pdf) · [editable DOCX](reports/Task_3_Phase_3_Python_Analysis_Report.docx)
 
-To run the analysis from the project root, place an authorized cleaned workbook at the expected input path and install the required packages:
+To run the analysis from the project root, place your own authorized, script-compatible cleaned workbook at the expected input path, or pass its location with `--input`. The public sanitized workbook is for inspection and cannot produce user/session-level analysis.
 
 ```powershell
 python -m pip install pandas openpyxl
@@ -38,7 +40,7 @@ python .\python\marketing_funnel_analysis.py --input ".\path\to\another-workbook
 
 ### Phase 3 — Power BI: interactive dashboard
 
-The Power BI report presents the marketing funnel overview and product/customer analysis. The `.pbix` file and customer-level workbook are retained locally and are not published here; the images below are static previews.
+The Power BI report presents the marketing funnel overview and product/customer analysis. The `.pbix` file is retained locally and is not published here; the images below are static previews.
 
 **Marketing funnel overview**
 
@@ -52,10 +54,10 @@ The Power BI report presents the marketing funnel overview and product/customer 
 
 ```text
 data/
-  raw/2019-Oct.csv                                      (local only; not published)
-  cleaned/Task_3_Marketing_Funnel_Cleaned.xlsx           (local only; not published)
+  raw/2019-Oct-Sanitized-Sample.csv
+  cleaned/Task_3_Marketing_Funnel_Cleaned_Sanitized.xlsx
 excel/
-  Task_3_Marketing_Funnel_Cleaned.xlsx                  (local only; not published)
+  Task_3_Marketing_Funnel_Cleaned_Sanitized.xlsx
 python/
   marketing_funnel_analysis.py
 reports/
@@ -67,7 +69,7 @@ visuals/
   project_workflow.svg
 ```
 
-The `data/` and `excel/` folders contain customer-level files and are intentionally excluded from this public repository.
+The published sample omits `user_id` and `user_session` and reduces timestamps to dates. The original source CSV, identifier-bearing cleaned workbook, and Power BI file remain local and are not published.
 
 ## Reading the funnel carefully
 

@@ -1,7 +1,10 @@
 # Customer-level event data and workbooks
 /data/raw/*.csv
+!/data/raw/2019-Oct-Sanitized-Sample.csv
 /data/cleaned/*.xlsx
+!/data/cleaned/Task_3_Marketing_Funnel_Cleaned_Sanitized.xlsx
 /excel/*.xlsx
+!/excel/Task_3_Marketing_Funnel_Cleaned_Sanitized.xlsx
 
 # Power BI files may embed customer-level data
 /powerbi/*.pbix
