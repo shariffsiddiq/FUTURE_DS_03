@@ -51,6 +51,11 @@ The Power BI report presents the marketing funnel overview and product/customer 
 ## Repository contents
 
 ```text
+data/
+  raw/2019-Oct.csv                                      (local only; not published)
+  cleaned/Task_3_Marketing_Funnel_Cleaned.xlsx           (local only; not published)
+excel/
+  Task_3_Marketing_Funnel_Cleaned.xlsx                  (local only; not published)
 python/
   marketing_funnel_analysis.py
 reports/
@@ -61,6 +66,8 @@ visuals/
   product_customer_analysis.png
   project_workflow.svg
 ```
+
+The `data/` and `excel/` folders contain customer-level files and are intentionally excluded from this public repository.
 
 ## Reading the funnel carefully
 
