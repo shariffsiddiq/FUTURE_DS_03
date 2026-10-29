@@ -22,6 +22,20 @@ Future_Interns_Task_3/
 
 Customer-level data files and the Power BI dashboard are kept out of GitHub. To run the analysis, provide your own authorized cleaned workbook locally; the script's default location is `data/cleaned/Task_3_Marketing_Funnel_Cleaned.xlsx`.
 
+## Project phases
+
+### Phase 1 — Data preparation and quality review
+
+The project starts from October 2019 e-commerce event data. The local cleaned workbook keeps a 9,999-record sample and includes data-quality and cleaning-summary sheets. Customer-level input data and the Power BI file are intentionally not published in this repository.
+
+### Phase 2 — Python analysis
+
+The Python script standardizes event fields, summarizes event and session activity, compares prices, brands, and categories, and checks data quality. It prints the analysis in the terminal; it does not create a text report file.
+
+### Phase 3 — Dashboard and findings
+
+The Power BI dashboard presents the funnel overview and product/customer views. The included PDF and Word documents describe the Python analysis and its limitations; dashboard screenshots and a workflow diagram provide static previews.
+
 ## How the pieces fit together
 
 ![Project workflow: raw event data is prepared into a cleaned Excel sample, then explored with Python and presented in Power BI.](visuals/project_workflow.svg)
@@ -79,6 +93,17 @@ The workbook must contain a `Cleaned_Data` sheet with these columns:
 The analysis groups events by session and checks whether a session contains views, cart events, or purchases. It also reports descriptive ratios, such as purchase sessions divided by view sessions.
 
 Those ratios are **not verified step-by-step conversion rates**: finding both a view and a purchase in a session does not prove which happened first. The sample is also limited, so the results should not be generalized to all customers or the full month.
+
+## Future implementation roadmap
+
+The following ideas would extend the current sample-based analysis; they are not implemented in the current script:
+
+1. **Analyze the full authorized dataset.** Process larger files in chunks or through a database, and compare the selected sample with the full source before drawing broader conclusions.
+2. **Measure ordered funnel transitions.** Reconstruct event timelines within sessions and define explicit view-to-cart and cart-to-purchase rules, including session boundaries and repeated events.
+3. **Add cohort and time-based views.** Compare conversion patterns across dates, acquisition periods, product groups, and returning versus first-time users where those fields are available.
+4. **Validate dashboard metrics.** Document each KPI definition, reconcile Power BI totals with Python outputs, and add recurring data-quality checks before refreshing the report.
+
+Any conversion or customer-level analysis should use appropriately authorized data and clearly state its definitions, coverage, and limitations.
 
 ## Files and outputs
 
